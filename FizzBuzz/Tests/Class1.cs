@@ -24,5 +24,12 @@ namespace FizzBuzz.Tests
             FizzBuzz.Of(5).Should().Be("Buzz");
             FizzBuzz.Of(20).Should().Be("Buzz");
         }
+
+
+        [Fact]
+        public void MultipleOfBoth3and5_ShouldReturnFizzBuzz()
+        {
+            FizzBuzz.Of(15).Should().Be("FizzBuzz");
+        }
     }
 }
