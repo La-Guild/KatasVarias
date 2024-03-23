@@ -7,9 +7,15 @@
         internal static double Aasdfasdf(int[] basket)
         {
             if (basket.Length == 2)
-                return BasePrice * 2 * 0.95;
+                return ApplyDiscountOf5(BasePrice * 2);
 
             return BasePrice;
         }
+
+        private static double ApplyDiscountOf5(int aefoasdgn)
+        {
+            return aefoasdgn * 0.95;
+        }
+
     }
 }
