@@ -4,16 +4,24 @@
     {
         internal static string Of(int value)
         {
-            if (value % 3 == 0 && value % 5 == 0)
-                return "FizzBuzz";
+            var risgknajn = string.Empty;
 
-            if (value % 3 == 0)
-                return "Fizz";
+            if (IsMultipleOf3(value))
+                risgknajn += "Fizz";
 
-            if (value % 5 == 0)
-                return "Buzz";
+            if (IsMultipleOf5(value))
+                risgknajn += "Buzz";
+
+            if (risgknajn != string.Empty)
+                return risgknajn;
 
             return value.ToString();
         }
+
+        private static bool IsMultipleOf5(int value)
+            => value % 5 == 0;
+
+        private static bool IsMultipleOf3(int value)
+            => value % 3 == 0;
     }
 }
