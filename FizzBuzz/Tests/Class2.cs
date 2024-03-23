@@ -5,8 +5,6 @@ namespace FizzBuzz.Tests
 {
     public class Class2
     {
-        // 1 libro 8€
-        // 2 libros distintos dto de 5%
         // 3 libros distintos dto de 10%
         // 4 libros distintos dto de 20%
         // 5 libros distintos dto de 25%
@@ -21,7 +19,14 @@ namespace FizzBuzz.Tests
         [Fact]
         public void Sssssss()
         {
-            Asdfassssdf.Aasdfasdf(new[] { 1, 2 }).Should().Be((8 * 2) * 0.95);
+            Asdfassssdf.Aasdfasdf(new[] { 1, 2 }).Should()
+                .Be((8 * 2) * 0.95);
+        }
+
+        [Fact]
+        public void Sssss()
+        {
+            Asdfassssdf.Aasdfasdf(new[] { 1, 1 }).Should().Be(8 * 2);
         }
     }
 }
