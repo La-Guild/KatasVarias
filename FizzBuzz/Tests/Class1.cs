@@ -8,8 +8,8 @@ namespace FizzBuzz.Tests
         [Fact]
         public void ASdfasdfasdf()
         {
-            Asdfasdasfasdf.Ds(3).Should().Be("Fizz");
-            Asdfasdasfasdf.Ds(12).Should().Be("12");
+            FizzBuzz.Of(3).Should().Be("Fizz");
+            FizzBuzz.Of(12).Should().Be("12");
         }
     }
 }
