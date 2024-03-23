@@ -9,6 +9,7 @@ namespace FizzBuzz.Tests
         public void ASdfasdfasdf()
         {
             FizzBuzz.Of(3).Should().Be("Fizz");
+            FizzBuzz.Of(5).Should().Be("Buzz");
             FizzBuzz.Of(12).Should().Be("12");
         }
     }
