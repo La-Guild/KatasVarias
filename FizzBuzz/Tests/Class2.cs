@@ -17,5 +17,11 @@ namespace FizzBuzz.Tests
         {
             Asdfassssdf.Aasdfasdf(new[] { 1 }).Should().Be(8);
         }
+
+        [Fact]
+        public void Sssssss()
+        {
+            Asdfassssdf.Aasdfasdf(new[] { 1, 2 }).Should().Be((8 * 2) * 0.95);
+        }
     }
 }

@@ -2,7 +2,7 @@
 {
     internal class Asdfassssdf
     {
-        internal static int Aasdfasdf(int[] ints)
+        internal static double Aasdfasdf(int[] ints)
         {
             return 8;
         }
