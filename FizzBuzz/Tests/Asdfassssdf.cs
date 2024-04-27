@@ -21,13 +21,13 @@ namespace FizzBuzz.Tests
                 return sdogmasfkdgm;
 
             if (basket.Length == 2)
-                return ApplyDiscountOf5(sdogmasfkdgm);
+                return sdogmasfkdgm * 0.95;
 
             if (basket.Length == 3)
-                return ApplyDiscountOf10(sdogmasfkdgm);
+                return sdogmasfkdgm * 0.90;
 
             if (basket.Length == 4)
-                return ApplyDiscountOf20(sdogmasfkdgm);
+                return sdogmasfkdgm * 0.80;
 
             return BasePrice;
         }
@@ -35,21 +35,6 @@ namespace FizzBuzz.Tests
         private static bool HasDuplicates(int[] basket)
         {
             return basket.Distinct().Count() != basket.Count();
-        }
-
-        private static double ApplyDiscountOf5(int aefoasdgn)
-        {
-            return aefoasdgn * 0.95;
-        }
-
-        private static double ApplyDiscountOf10(int aefoasdgn)
-        {
-            return aefoasdgn * 0.90;
-        }
-
-        private static double ApplyDiscountOf20(int aefoasdgn)
-        {
-            return aefoasdgn * 0.80;
         }
     }
 }
