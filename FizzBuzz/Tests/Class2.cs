@@ -5,8 +5,6 @@ namespace FizzBuzz.Tests
 {
     public class Class2
     {
-        // 3 libros distintos dto de 10%
-        // 4 libros distintos dto de 20%
         // 5 libros distintos dto de 25%
         // 4 libros 3 distintos dto de 10% en los 3 distintos + 8€ del repetido.
 
@@ -38,6 +36,15 @@ namespace FizzBuzz.Tests
 
             Asdfassssdf.Aasdfasdf(new[] { 1, 2, 3 }).Should()
                 .Be((8 * 3) * BasePriceAfterDiscountOf10);
+        }
+
+        [Fact]
+        public void Four_distinct_books_have_20percentage_discount()
+        {
+            const double BasePriceAfterDiscountOf20 = 0.80;
+
+            Asdfassssdf.Aasdfasdf(new[] { 1, 2, 3, 4 }).Should()
+                .Be((8 * 4) * BasePriceAfterDiscountOf20);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 
 namespace FizzBuzz.Tests
 {
@@ -19,6 +19,9 @@ namespace FizzBuzz.Tests
             if (basket.Length == 3)
                 return ApplyDiscountOf10(sdogmasfkdgm);
 
+if (basket.Length == 4)
+                return ApplyDiscountOf20(sdogmasfkdgm);
+
             return BasePrice;
         }
 
@@ -35,6 +38,11 @@ namespace FizzBuzz.Tests
         private static double ApplyDiscountOf10(int aefoasdgn)
         {
             return aefoasdgn * 0.90;
+        }
+
+        private static double ApplyDiscountOf20(int aefoasdgn)
+        {
+            return aefoasdgn * 0.80;
         }
     }
 }
