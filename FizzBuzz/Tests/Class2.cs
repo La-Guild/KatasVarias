@@ -17,12 +17,12 @@ namespace FizzBuzz.Tests
         }
 
         [Fact]
-        public void Two_sdkjsdfklgsd_books_have_5percentage_discount()
+        public void Two_distinct_books_have_5percentage_discount()
         {
-            const double DiscountOf5 = 0.95;
+            const double BasePriceAfterDiscountOf5 = 0.95;
 
             Asdfassssdf.Aasdfasdf(new[] { 1, 2 }).Should()
-                .Be((8 * 2) * DiscountOf5);
+                .Be((8 * 2) * BasePriceAfterDiscountOf5);
         }
 
         [Fact]
