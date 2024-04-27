@@ -9,6 +9,7 @@ namespace FizzBuzz.Tests
 
         private static Dictionary<int, double> priceAfterDiscount = new()
         {
+            { 1, 1.00 },
             { 2, 0.95 },
             { 3, 0.90 },
             { 4, 0.80 },
@@ -21,10 +22,7 @@ namespace FizzBuzz.Tests
             if (HasDuplicates(basket))
                 return sdogmasfkdgm;
 
-            if (basket.Length > 1)
-                return sdogmasfkdgm * priceAfterDiscount[basket.Length];
-
-            return BasePrice;
+            return sdogmasfkdgm * priceAfterDiscount[basket.Length];
         }
 
         private static bool HasDuplicates(int[] basket)
