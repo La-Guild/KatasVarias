@@ -13,6 +13,7 @@ namespace FizzBuzz.Tests
             { 2, 0.95 },
             { 3, 0.90 },
             { 4, 0.80 },
+            { 5, 0.75 },
         };
 
         internal static double Aasdfasdf(int[] basket)
