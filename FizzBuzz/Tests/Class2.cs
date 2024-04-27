@@ -30,5 +30,14 @@ namespace FizzBuzz.Tests
         {
             Asdfassssdf.Aasdfasdf(new[] { 1, 1 }).Should().Be(8 * 2);
         }
+
+        [Fact]
+        public void Three_distinct_books_have_10percentage_discount()
+        {
+            const double BasePriceAfterDiscountOf10 = 0.90;
+
+            Asdfassssdf.Aasdfasdf(new[] { 1, 2, 3 }).Should()
+                .Be((8 * 3) * BasePriceAfterDiscountOf10);
+        }
     }
 }

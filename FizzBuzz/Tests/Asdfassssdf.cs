@@ -14,6 +14,9 @@ namespace FizzBuzz.Tests
             if (basket.Length == 2)
                 return ApplyDiscountOf5(BasePrice * 2);
 
+            if (basket.Length == 3)
+                return ApplyDiscountOf10(BasePrice * 3);
+
             return BasePrice;
         }
 
@@ -25,6 +28,11 @@ namespace FizzBuzz.Tests
         private static double ApplyDiscountOf5(int aefoasdgn)
         {
             return aefoasdgn * 0.95;
+        }
+
+        private static double ApplyDiscountOf10(int aefoasdgn)
+        {
+            return aefoasdgn * 0.90;
         }
     }
 }
