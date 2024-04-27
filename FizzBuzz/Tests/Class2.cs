@@ -5,13 +5,12 @@ namespace FizzBuzz.Tests
 {
     public class Class2
     {
-        // 5 libros distintos dto de 25%
         // 4 libros 3 distintos dto de 10% en los 3 distintos + 8€ del repetido.
 
         [Fact]
         public void A_single_book_cost_8()
         {
-            Asdfassssdf.Aasdfasdf(new[] { 1 }).Should().Be(8);
+            PotterShop.CashOut(new[] { 1 }).Should().Be(8);
         }
 
         [Fact]
@@ -19,14 +18,14 @@ namespace FizzBuzz.Tests
         {
             const double BasePriceAfterDiscountOf5 = 0.95;
 
-            Asdfassssdf.Aasdfasdf(new[] { 1, 2 }).Should()
+            PotterShop.CashOut(new[] { 1, 2 }).Should()
                 .Be((8 * 2) * BasePriceAfterDiscountOf5);
         }
 
         [Fact]
         public void Duplicate_books_have_no_discount()
         {
-            Asdfassssdf.Aasdfasdf(new[] { 1, 1 }).Should().Be(8 * 2);
+            PotterShop.CashOut(new[] { 1, 1 }).Should().Be(8 * 2);
         }
 
         [Fact]
@@ -34,7 +33,7 @@ namespace FizzBuzz.Tests
         {
             const double BasePriceAfterDiscountOf10 = 0.90;
 
-            Asdfassssdf.Aasdfasdf(new[] { 1, 2, 3 }).Should()
+            PotterShop.CashOut(new[] { 1, 2, 3 }).Should()
                 .Be((8 * 3) * BasePriceAfterDiscountOf10);
         }
 
@@ -43,7 +42,7 @@ namespace FizzBuzz.Tests
         {
             const double BasePriceAfterDiscountOf20 = 0.80;
 
-            Asdfassssdf.Aasdfasdf(new[] { 1, 2, 3, 4 }).Should()
+            PotterShop.CashOut(new[] { 1, 2, 3, 4 }).Should()
                 .Be((8 * 4) * BasePriceAfterDiscountOf20);
         }
 
@@ -52,7 +51,7 @@ namespace FizzBuzz.Tests
         {
             const double BasePriceAfterDiscountOf25 = 0.75;
 
-            Asdfassssdf.Aasdfasdf(new[] { 1, 2, 3, 4, 5 }).Should()
+            PotterShop.CashOut(new[] { 1, 2, 3, 4, 5 }).Should()
                 .Be((8 * 5) * BasePriceAfterDiscountOf25);
         }
     }

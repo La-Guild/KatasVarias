@@ -4,13 +4,13 @@ using System.Linq;
 
 namespace FizzBuzz.Tests
 {
-    internal class Asdfassssdf
+    internal class PotterShop
     {
-        private const int BasePrice = 8;
+        private const int PricePerUnit = 8;
 
-        internal static double Aasdfasdf(int[] basket)
+        internal static double CashOut(int[] basket)
         {
-            var sdogmasfkdgm = BasePrice * basket.Length;
+            var sdogmasfkdgm = PricePerUnit * basket.Length;
 
             if (HasDuplicates(basket))
                 return sdogmasfkdgm;
