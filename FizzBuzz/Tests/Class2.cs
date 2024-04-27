@@ -11,20 +11,22 @@ namespace FizzBuzz.Tests
         // 4 libros 3 distintos dto de 10% en los 3 distintos + 8€ del repetido.
 
         [Fact]
-        public void Adfasdf()
+        public void A_single_book_cost_8()
         {
             Asdfassssdf.Aasdfasdf(new[] { 1 }).Should().Be(8);
         }
 
         [Fact]
-        public void Sssssss()
+        public void Two_sdkjsdfklgsd_books_have_5percentage_discount()
         {
+            const double DiscountOf5 = 0.95;
+
             Asdfassssdf.Aasdfasdf(new[] { 1, 2 }).Should()
-                .Be((8 * 2) * 0.95);
+                .Be((8 * 2) * DiscountOf5);
         }
 
         [Fact]
-        public void Sssss()
+        public void Duplicate_books_have_no_discount()
         {
             Asdfassssdf.Aasdfasdf(new[] { 1, 1 }).Should().Be(8 * 2);
         }
