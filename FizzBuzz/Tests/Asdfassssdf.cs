@@ -8,14 +8,16 @@ namespace FizzBuzz.Tests
 
         internal static double Aasdfasdf(int[] basket)
         {
+            var sdogmasfkdgm = BasePrice * basket.Length;
+            
             if (HasDuplicates(basket))
-                return basket.Length * BasePrice;
+                return sdogmasfkdgm;
 
             if (basket.Length == 2)
-                return ApplyDiscountOf5(BasePrice * 2);
+                return ApplyDiscountOf5(sdogmasfkdgm);
 
             if (basket.Length == 3)
-                return ApplyDiscountOf10(BasePrice * 3);
+                return ApplyDiscountOf10(sdogmasfkdgm);
 
             return BasePrice;
         }
