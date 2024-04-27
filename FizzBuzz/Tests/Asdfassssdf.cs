@@ -1,3 +1,4 @@
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace FizzBuzz.Tests
@@ -5,6 +6,12 @@ namespace FizzBuzz.Tests
     internal class Asdfassssdf
     {
         private const int BasePrice = 8;
+        private Dictionary<int, double> priceAfterDiscount = new()
+        {
+            {2, 0.95},
+            {3, 0.90},
+            {4, 0.80},
+        };
 
         internal static double Aasdfasdf(int[] basket)
         {
@@ -19,7 +26,7 @@ namespace FizzBuzz.Tests
             if (basket.Length == 3)
                 return ApplyDiscountOf10(sdogmasfkdgm);
 
-if (basket.Length == 4)
+            if (basket.Length == 4)
                 return ApplyDiscountOf20(sdogmasfkdgm);
 
             return BasePrice;
