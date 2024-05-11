@@ -60,5 +60,11 @@ namespace FizzBuzz.Tests
             PotterShop.CashOut(new[] { 1, 2, 3, 4, 5 }).Should()
                 .Be((8 * 5) * BasePriceAfterDiscountOf25);
         }
+
+        [Fact]
+        public void Four_books_with_three_distinct_applies_discount_for_the_three_plus_normal_price_for_duplicate()
+        {
+            PotterShop.CashOut(new[] { 1, 2, 3, 3 }).Should().Be(29.60);
+        }
     }
 }
