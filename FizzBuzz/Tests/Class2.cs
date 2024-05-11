@@ -73,5 +73,11 @@ namespace FizzBuzz.Tests
         {
             PotterShop.HowManyDuplicates(new[] { 1, 3, 3 }).Should().Be(1);
         }
+
+         [Fact]
+        public void asdfasdfafsd()
+        {
+            PotterShop.HowManyDistinct(new[] { 1, 3, 3 }).Should().Be(2);
+        }
     }
 }
