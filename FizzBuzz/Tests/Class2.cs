@@ -11,8 +11,7 @@ namespace FizzBuzz.Tests
         // - Evaluar cómo nos ha afectado el orden de tests
         // - Chilling
         // - Ver que es Public vs Publish API.
-
-        // 4 libros 3 distintos dto de 10% en los 3 distintos + 8€ del duplicado.
+        // - Parametrización
 
         [Fact]
         public void A_single_book_cost_8()
