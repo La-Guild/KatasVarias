@@ -12,7 +12,7 @@ namespace FizzBuzz.Tests
         // - Chilling
         // - Ver que es Public vs Publish API.
 
-        // 4 libros 3 distintos dto de 10% en los 3 distintos + 8€ del repetido.
+        // 4 libros 3 distintos dto de 10% en los 3 distintos + 8€ del duplicado.
 
         [Fact]
         public void A_single_book_cost_8()
@@ -63,7 +63,7 @@ namespace FizzBuzz.Tests
         }
 
         [Fact]
-        public void Four_books_with_three_distinct_applies_discount_for_the_three_plus_normal_price_for_duplicate()
+        public void Discount_only_applies_to_disctinct_books()
         {
             PotterShop.CashOut(new[] { 1, 2, 3, 3 }).Should().Be(29.60);
         }
