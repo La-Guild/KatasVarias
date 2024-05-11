@@ -35,5 +35,10 @@ namespace FizzBuzz.Tests
         {
             return basket.Distinct().Count() != basket.Count();
         }
+
+        public static int HowManyDuplicates(int[] basket)
+        {
+            return basket.Length - basket.Distinct().Count();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using System.Linq;
+using FluentAssertions;
 using Xunit;
 
 namespace FizzBuzz.Tests
@@ -65,6 +66,12 @@ namespace FizzBuzz.Tests
         public void Four_books_with_three_distinct_applies_discount_for_the_three_plus_normal_price_for_duplicate()
         {
             PotterShop.CashOut(new[] { 1, 2, 3, 3 }).Should().Be(29.60);
+        }
+
+        [Fact]
+        public void DFGsdfgsdfh()
+        {
+            PotterShop.HowManyDuplicates(new[] { 1, 3, 3 }).Should().Be(1);
         }
     }
 }
