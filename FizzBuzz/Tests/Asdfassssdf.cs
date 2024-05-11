@@ -12,8 +12,8 @@ namespace FizzBuzz.Tests
         {
             var priceForDuplicates = HowManyDuplicates(basket) * PricePerUnit;
             var priceForDistinct = HowManyDistinct(basket)
-                                   * PricePerUnit
-                                   * PriceAfterDiscountForDistinctBooks(HowManyDistinct(basket));
+                * PricePerUnit
+                * PriceAfterDiscountForDistinctBooks(HowManyDistinct(basket));
 
             return priceForDuplicates + priceForDistinct;
         }
@@ -31,17 +31,12 @@ namespace FizzBuzz.Tests
             };
         }
 
-        private static bool HasDuplicates(int[] basket)
-        {
-            return basket.Distinct().Count() != basket.Count();
-        }
-
-        public static int HowManyDuplicates(int[] basket)
+        private static int HowManyDuplicates(int[] basket)
         {
             return basket.Length - basket.Distinct().Count();
         }
 
-        public static int HowManyDistinct(int[] basket)
+        private static int HowManyDistinct(int[] basket)
         {
             return basket.Distinct().Count();
         }

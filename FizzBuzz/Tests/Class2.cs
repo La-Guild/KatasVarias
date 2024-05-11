@@ -66,17 +66,5 @@ namespace FizzBuzz.Tests
         {
             PotterShop.CashOut(new[] { 1, 2, 3, 3 }).Should().Be(29.60);
         }
-
-        [Fact]
-        public void DFGsdfgsdfh()
-        {
-            PotterShop.HowManyDuplicates(new[] { 1, 3, 3 }).Should().Be(1);
-        }
-
-         [Fact]
-        public void asdfasdfafsd()
-        {
-            PotterShop.HowManyDistinct(new[] { 1, 3, 3 }).Should().Be(2);
-        }
     }
 }
