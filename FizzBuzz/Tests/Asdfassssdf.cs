@@ -10,15 +10,12 @@ namespace FizzBuzz.Tests
 
         internal static double CashOut(int[] basket)
         {
-            var duplicates = HowManyDuplicates(basket);
-            var discint = HowManyDistinct(basket);
+            var priceForDuplicates = HowManyDuplicates(basket) * PricePerUnit;
+            var priceForDistinct = HowManyDistinct(basket)
+                                   * PricePerUnit
+                                   * PriceAfterDiscountForDistinctBooks(HowManyDistinct(basket));
 
-            var sadfa = duplicates * PricePerUnit;
-            var sadfa2 = discint
-                * PricePerUnit
-                * PriceAfterDiscountForDistinctBooks(discint);
-
-            return sadfa + sadfa2;
+            return priceForDuplicates + priceForDistinct;
         }
 
         private static double PriceAfterDiscountForDistinctBooks(int howMany)
