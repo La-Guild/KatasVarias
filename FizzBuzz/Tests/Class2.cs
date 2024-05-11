@@ -5,6 +5,12 @@ namespace FizzBuzz.Tests
 {
     public class Class2
     {
+        // Objetivos: 
+        // - Completar el requisito
+        // - Evaluar cómo nos ha afectado el orden de tests
+        // - Chilling
+        // - Ver que es Public vs Publish API.
+
         // 4 libros 3 distintos dto de 10% en los 3 distintos + 8€ del repetido.
 
         [Fact]
