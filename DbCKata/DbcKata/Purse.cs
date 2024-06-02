@@ -2,22 +2,19 @@ namespace DbcKata;
 
 public class Purse
 {
-    int coins;
+    Positive coins;
 
-    public Purse(int coins)
+    public Purse(Positive coins)
     {
-        if (coins < 0)
-            throw new ArgumentException("Coins must be positive");
-
         this.coins = coins;
     }
 
-    public bool CanAfford(int amount)
+    public bool CanAfford(Positive amount)
     {
         return coins >= amount;
     }
 
-    public void Afdasfs(int price)
+    public void Afdasfs(Positive price)
     {
         coins -= price;
     }
