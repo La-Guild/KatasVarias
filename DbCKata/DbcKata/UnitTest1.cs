@@ -11,9 +11,9 @@ public class Tests
 
 public class asfasfsafas
 {
-    public void Recruit()
+    public void Recruit(Purse purse)
     {
-        if(Coins < RecruitmentPrice)
+        if (!purse.CanAfford(RecruitmentPrice))
             throw new InvalidOperationException("No hay suficiente oro");
     }
 
