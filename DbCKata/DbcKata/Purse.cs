@@ -20,7 +20,6 @@ public class Purse
             throw new InvalidOperationException("No hay suficiente oro");
 
         var oldAmount = coins;
-
         coins -= price;
 
         if (coins >= oldAmount)

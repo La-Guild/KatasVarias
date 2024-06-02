@@ -9,15 +9,42 @@ public class Tests
     }
 }
 
-public class asfasfsafas
+public class Recruit
 {
-    public void Recruit(Purse purse)
+    public void Execute(Purse purse, RecruitmentPriceBasedOnSquad asfas)
     {
-        if (!purse.CanAfford(RecruitmentPrice))
+        if (!purse.CanAfford(asfas.RecruitmentPrice()))
             throw new InvalidOperationException("No hay suficiente oro");
 
-        purse.Afdasfs(RecruitmentPrice);
+        purse.Afdasfs(asfas.RecruitmentPrice());
+    }
+}
+
+public class RecruitmentPriceBasedOnSquad
+{
+    Squad forSquad;
+
+    public RecruitmentPriceBasedOnSquad(Squad forSquad)
+    {
+        this.forSquad = forSquad;
     }
 
-    public int RecruitmentPrice { get; set; }
+    public Positive RecruitmentPrice()
+    {
+        var result = 1;
+        
+        EnsurePriceValidity(result);
+        return result;
+    }
+
+    static void EnsurePriceValidity(int result)
+    {
+        if (result < 3 || result > 50)
+            throw new NotSupportedException("El precio de reclutamiento no es válido");
+    }
+}
+
+public class Squad
+{
+    public int Size { get; set; }
 }
