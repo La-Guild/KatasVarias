@@ -11,12 +11,12 @@ public class Tests
 
 public class Recruit
 {
-    public void Execute(Purse purse, RecruitmentPriceBasedOnSquad asfas)
+    public void Execute(Purse purse, RecruitmentPriceBasedOnSquad recruitmentPrice)
     {
-        if (!purse.CanAfford(asfas.RecruitmentPrice()))
+        if (!purse.CanAfford(recruitmentPrice))
             throw new InvalidOperationException("No hay suficiente oro");
 
-        purse.Afdasfs(asfas.RecruitmentPrice());
+        purse.Afdasfs(recruitmentPrice);
     }
 }
 

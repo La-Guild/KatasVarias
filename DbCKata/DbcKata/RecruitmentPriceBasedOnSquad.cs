@@ -9,12 +9,17 @@ public class RecruitmentPriceBasedOnSquad
         this.forSquad = forSquad;
     }
 
-    public Positive RecruitmentPrice()
+    private Positive RecruitmentPrice()
     {
-        var result = 1;
+        var result = 5;
 
         EnsurePriceValidity(result);
         return result;
+    }
+
+    public static implicit operator Positive(RecruitmentPriceBasedOnSquad sadfgkhjn)
+    {
+        return sadfgkhjn.RecruitmentPrice();
     }
 
     static void EnsurePriceValidity(int result)
