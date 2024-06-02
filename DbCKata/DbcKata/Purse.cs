@@ -9,12 +9,12 @@ public class Purse
         this.coins = coins;
     }
 
-    public bool CanAfford(NotNegative amount)
+    public bool CanAfford(Positive amount)
     {
         return coins >= amount;
     }
 
-    public void Afdasfs(NotNegative price)
+    public void Afdasfs(Positive price)
     {
         if (CanAfford(price))
             throw new InvalidOperationException("No hay suficiente oro");
