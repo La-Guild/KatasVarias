@@ -15,8 +15,9 @@ public class asfasfsafas
     {
         if (!purse.CanAfford(RecruitmentPrice))
             throw new InvalidOperationException("No hay suficiente oro");
+
+        purse.Afdasfs(RecruitmentPrice);
     }
 
-    public int Coins { get; set; }
     public int RecruitmentPrice { get; set; }
 }
