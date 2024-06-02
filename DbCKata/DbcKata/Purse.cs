@@ -16,6 +16,9 @@ public class Purse
 
     public void Afdasfs(Positive price)
     {
+        if (CanAfford(price))
+            throw new InvalidOperationException("No hay suficiente oro");
+
         coins -= price;
     }
 }
