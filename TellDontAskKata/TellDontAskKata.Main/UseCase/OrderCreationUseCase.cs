@@ -31,10 +31,9 @@ namespace TellDontAskKata.Main.UseCase
                 }
                 else
                 {
-                    var unitaryTax = Round((product.Price / 100m) * product.Category.TaxPercentage);
-                    var unitaryTaxedAmount = Round(product.Price + unitaryTax);
+                    var unitaryTaxedAmount = Round(product.Price + product.UnitaryTax);
                     var taxedAmount = Round(unitaryTaxedAmount * itemRequest.Quantity);
-                    var taxAmount = Round(unitaryTax * itemRequest.Quantity);
+                    var taxAmount = Round(product.UnitaryTax * itemRequest.Quantity);
 
                     var orderItem = new OrderItem
                     {
