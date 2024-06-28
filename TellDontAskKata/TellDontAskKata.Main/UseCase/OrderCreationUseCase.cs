@@ -33,10 +33,5 @@ namespace TellDontAskKata.Main.UseCase
 
             _orderRepository.Save(Order.With(items));
         }
-
-        private static decimal Round(decimal amount)
-        {
-            return decimal.Round(amount, 2, System.MidpointRounding.ToPositiveInfinity);
-        }
     }
 }
