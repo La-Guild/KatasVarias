@@ -16,7 +16,8 @@ namespace TellDontAskKata.Tests.UseCase
 
         public OrderCreationUseCaseTest()
         {
-            var food = new Category { 
+            var food = new Category
+            {
                 Name = "food",
                 TaxPercentage = 10m
             };
@@ -71,13 +72,13 @@ namespace TellDontAskKata.Tests.UseCase
             Assert.Equal(2.13m, insertedOrder.Tax);
             Assert.Equal("EUR", insertedOrder.Currency);
             Assert.Equal(2, insertedOrder.Items.Count);
-            Assert.Equal("salad", insertedOrder.Items[0].Product.Name);
-            Assert.Equal(3.56m, insertedOrder.Items[0].Product.Price);
+            Assert.Equal("salad", insertedOrder.Items[0].Name);
+            Assert.Equal(3.56m, insertedOrder.Items[0].UnitaryPrice);
             Assert.Equal(2, insertedOrder.Items[0].Quantity);
             Assert.Equal(7.84m, insertedOrder.Items[0].TaxedAmount);
             Assert.Equal(0.72m, insertedOrder.Items[0].Tax);
-            Assert.Equal("tomato", insertedOrder.Items[1].Product.Name);
-            Assert.Equal(4.65m, insertedOrder.Items[1].Product.Price);
+            Assert.Equal("tomato", insertedOrder.Items[1].Name);
+            Assert.Equal(4.65m, insertedOrder.Items[1].UnitaryPrice);
             Assert.Equal(3, insertedOrder.Items[1].Quantity);
             Assert.Equal(15.36m, insertedOrder.Items[1].TaxedAmount);
             Assert.Equal(1.41m, insertedOrder.Items[1].Tax);
@@ -88,7 +89,7 @@ namespace TellDontAskKata.Tests.UseCase
         {
             var request = new SellItemsRequest
             {
-                Requests = new List<SellItemRequest> { 
+                Requests = new List<SellItemRequest> {
                     new SellItemRequest { ProductName = "unknown product"}
                 }
             };

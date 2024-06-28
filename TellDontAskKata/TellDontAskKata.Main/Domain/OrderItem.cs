@@ -2,7 +2,9 @@
 {
     public class OrderItem
     {
-        public Product Product { get; set; }
+        public string Name { get; private set; }
+        public decimal UnitaryPrice { get; private set; }
+
         public int Quantity { get; set; }
         public decimal TaxedAmount { get; set; }
         public decimal Tax { get; set; }
@@ -11,7 +13,8 @@
         {
             return new OrderItem
             {
-                Product = product,
+                Name = product.Name,
+                UnitaryPrice = product.Price,
                 Quantity = quantity,
                 Tax = Round(product.UnitaryTax * quantity),
                 TaxedAmount = Round(product.UnitaryTaxedAmount * quantity)
@@ -20,7 +23,10 @@
 
         private static decimal Round(decimal amount)
         {
-            return decimal.Round(amount, 2, System.MidpointRounding.ToPositiveInfinity);
+            return decimal.Round(
+                d: amount,
+                decimals: 2,
+                mode: System.MidpointRounding.ToPositiveInfinity);
         }
     }
 }
