@@ -26,23 +26,9 @@ namespace TellDontAskKata.Main.UseCase
                 var product = _productCatalog.GetByName(itemRequest.ProductName);
 
                 if (product == null)
-                {
                     throw new UnknownProductException();
-                }
-                else
-                {
-                    var taxedAmount = Round(product.UnitaryTaxedAmount * itemRequest.Quantity);
-                    var taxAmount = Round(product.UnitaryTax * itemRequest.Quantity);
 
-                    var orderItem = new OrderItem
-                    {
-                        Product = product,
-                        Quantity = itemRequest.Quantity,
-                        Tax = taxAmount,
-                        TaxedAmount = taxedAmount
-                    };
-                    items.Add(orderItem);
-                }
+                items.Add(OrderItem.From(product, quantity: itemRequest.Quantity));
             }
 
             _orderRepository.Save(Order.With(items));
