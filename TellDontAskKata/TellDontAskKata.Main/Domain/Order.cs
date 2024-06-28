@@ -14,6 +14,8 @@ namespace TellDontAskKata.Main.Domain
         public void Add(OrderItem item)
         {
             Items.Add(item);
+            Total += item.TaxedAmount;
+            Tax += item.Tax;
         }
     }
 }

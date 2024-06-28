@@ -11,10 +11,14 @@ namespace TellDontAskKata.Tests.DomainTests
         {
             var sut = new Order();
             OrderItem item = new OrderItem();
+            item.TaxedAmount = 10m;
+            item.Tax = 5m;
 
             sut.Add(item);
 
             sut.Items.Should().NotBeEmpty();
+            sut.Tax.Should().Be(item.Tax);
+            sut.Total.Should().Be(item.TaxedAmount);
         }
     }
 }
