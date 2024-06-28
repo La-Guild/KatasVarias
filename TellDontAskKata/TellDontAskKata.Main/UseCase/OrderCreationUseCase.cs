@@ -21,9 +21,7 @@ namespace TellDontAskKata.Main.UseCase
             var order = new Order
             {
                 Status = OrderStatus.Created,
-                Currency = "EUR",
-                Total = 0m,
-                Tax = 0m
+                Currency = "EUR"
             };
 
             foreach (var itemRequest in request.Requests)
