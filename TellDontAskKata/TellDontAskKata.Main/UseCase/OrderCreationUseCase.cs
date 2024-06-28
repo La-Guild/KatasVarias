@@ -47,15 +47,7 @@ namespace TellDontAskKata.Main.UseCase
                 }
             }
 
-            var order = new Order
-            {
-                Status = OrderStatus.Created,
-                Currency = "EUR"
-            };
-
-            items.ForEach(i => order.Add(i));
-
-            _orderRepository.Save(order);
+            _orderRepository.Save(Order.With(items));
         }
 
         private static decimal Round(decimal amount)

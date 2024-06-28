@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using System.Collections.Generic;
+using FluentAssertions;
 using TellDontAskKata.Main.Domain;
 using Xunit;
 
@@ -19,6 +20,13 @@ namespace TellDontAskKata.Tests.DomainTests
             sut.Items.Should().NotBeEmpty();
             sut.Tax.Should().Be(item.Tax);
             sut.Total.Should().Be(item.TaxedAmount);
+        }
+
+        [Fact]
+        public void ASsdafgsdga()
+        {
+            Order.With(new List<OrderItem>());
+            Order.With(new List<OrderItem> { new OrderItem(), new OrderItem() }).Items.Should().NotBeEmpty();
         }
     }
 }

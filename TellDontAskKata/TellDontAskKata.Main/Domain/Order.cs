@@ -16,5 +16,18 @@ namespace TellDontAskKata.Main.Domain
         {
             Items.Add(item);
         }
+
+        public static Order With(List<OrderItem> orderItems)
+        {
+            var order = new Order
+            {
+                Status = OrderStatus.Created,
+                Currency = "EUR"
+            };
+
+            orderItems.ForEach(i => order.Add(i));
+
+            return order;
+        }
     }
 }
