@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using TellDontAskKata.Main.Domain;
+﻿using TellDontAskKata.Main.Domain;
 using TellDontAskKata.Main.Repository;
 
 namespace TellDontAskKata.Main.UseCase
@@ -22,7 +21,6 @@ namespace TellDontAskKata.Main.UseCase
             var order = new Order
             {
                 Status = OrderStatus.Created,
-                Items = new List<OrderItem>(),
                 Currency = "EUR",
                 Total = 0m,
                 Tax = 0m
