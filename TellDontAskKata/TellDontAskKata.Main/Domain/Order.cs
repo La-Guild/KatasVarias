@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace TellDontAskKata.Main.Domain
@@ -19,6 +20,9 @@ namespace TellDontAskKata.Main.Domain
 
         public static Order With(List<OrderItem> orderItems)
         {
+            if (!orderItems.Any())
+                throw new ArgumentException();
+
             var order = new Order
             {
                 Status = OrderStatus.Created,

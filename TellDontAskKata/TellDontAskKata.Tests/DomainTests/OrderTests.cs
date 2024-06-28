@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using FluentAssertions;
+﻿using FluentAssertions;
+using System.Collections.Generic;
 using TellDontAskKata.Main.Domain;
 using Xunit;
 
@@ -25,8 +25,9 @@ namespace TellDontAskKata.Tests.DomainTests
         [Fact]
         public void ASsdafgsdga()
         {
-            Order.With(new List<OrderItem>());
-            Order.With(new List<OrderItem> { new OrderItem(), new OrderItem() }).Items.Should().NotBeEmpty();
+            Order.With(new List<OrderItem> { new OrderItem(), new OrderItem() })
+                .Items
+                .Should().NotBeEmpty();
         }
     }
 }
