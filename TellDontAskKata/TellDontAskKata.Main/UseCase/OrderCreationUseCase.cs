@@ -1,4 +1,5 @@
-﻿using TellDontAskKata.Main.Domain;
+﻿using System.Collections.Generic;
+using TellDontAskKata.Main.Domain;
 using TellDontAskKata.Main.Repository;
 
 namespace TellDontAskKata.Main.UseCase
@@ -18,11 +19,7 @@ namespace TellDontAskKata.Main.UseCase
 
         public void Run(SellItemsRequest request)
         {
-            var order = new Order
-            {
-                Status = OrderStatus.Created,
-                Currency = "EUR"
-            };
+            var items = new List<OrderItem>();
 
             foreach (var itemRequest in request.Requests)
             {
@@ -46,9 +43,17 @@ namespace TellDontAskKata.Main.UseCase
                         Tax = taxAmount,
                         TaxedAmount = taxedAmount
                     };
-                    order.Add(orderItem);
+                    items.Add(orderItem);
                 }
             }
+
+            var order = new Order
+            {
+                Status = OrderStatus.Created,
+                Currency = "EUR"
+            };
+
+            items.ForEach(i => order.Add(i));
 
             _orderRepository.Save(order);
         }
