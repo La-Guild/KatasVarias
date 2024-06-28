@@ -17,7 +17,6 @@ namespace TellDontAskKata.Tests.UseCase
             _useCase = new OrderApprovalUseCase(_orderRepository);
         }
 
-
         [Fact]
         public void ApprovedExistingOrder()
         {
@@ -81,7 +80,7 @@ namespace TellDontAskKata.Tests.UseCase
 
 
             Action actionToTest = () => _useCase.Run(request);
-      
+
             Assert.Throws<RejectedOrderCannotBeApprovedException>(actionToTest);
             Assert.Null(_orderRepository.GetSavedOrder());
         }
@@ -104,7 +103,7 @@ namespace TellDontAskKata.Tests.UseCase
 
 
             Action actionToTest = () => _useCase.Run(request);
-            
+
             Assert.Throws<ApprovedOrderCannotBeRejectedException>(actionToTest);
             Assert.Null(_orderRepository.GetSavedOrder());
         }

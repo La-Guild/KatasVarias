@@ -28,7 +28,8 @@ namespace TellDontAskKata.Main.UseCase
                 Tax = 0m
             };
 
-            foreach(var itemRequest in request.Requests){
+            foreach (var itemRequest in request.Requests)
+            {
                 var product = _productCatalog.GetByName(itemRequest.ProductName);
 
                 if (product == null)
@@ -49,7 +50,7 @@ namespace TellDontAskKata.Main.UseCase
                         Tax = taxAmount,
                         TaxedAmount = taxedAmount
                     };
-                    order.Items.Add(orderItem);
+                    order.Add(orderItem);
                     order.Total += taxedAmount;
                     order.Tax += taxAmount;
                 }
