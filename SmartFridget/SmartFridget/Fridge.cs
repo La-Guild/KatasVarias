@@ -19,7 +19,7 @@
             return itemExpiration.Day - currentDate.Day - 1;
         }
 
-        internal string ASDfasfd(DateTime currentDate)
+        internal string DisplayContents(DateTime currentDate)
         {
             if (this.addedItem is not null)
             {
@@ -31,8 +31,8 @@
 
         private string RenderItem(DateTime currentDate, AddedItem addedItem)
         {
-            if (IsExpired(currentDate, addedItem.Expiration))
-                return "EXPIRED: Lechuga";
+            if (IsExpired(currentDate, this.ExpirationOf(addedItem)))
+                return $"EXPIRED: {addedItem.Name}";
 
             return $"{addedItem.Name}: " +
                 DaysUntilExpiration(currentDate, this.ExpirationOf(addedItem)) +

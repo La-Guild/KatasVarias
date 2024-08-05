@@ -14,7 +14,7 @@ public class Tests
     [Test]
     public void Test1()
     {
-        Fridge.Empty.ASDfasfd(new DateTime()).Should().BeEmpty();
+        Fridge.Empty.DisplayContents(new DateTime()).Should().BeEmpty();
     }
 
     [Test]
@@ -25,7 +25,7 @@ public class Tests
         DateTime expiration = new DateTime();
         sut.SADfasdf(new AddedItem(Name: "Lechuga", Expiration: expiration));
 
-        sut.ASDfasfd(expiration).Should().Be("EXPIRED: Lechuga");
+        sut.DisplayContents(expiration).Should().Be("EXPIRED: Lechuga");
     }
 
     [Test]
@@ -39,7 +39,7 @@ public class Tests
 
         sut.SADfasdf(expiresTomorrow);
 
-        sut.ASDfasfd(expiration).Should().Be("Tomate: 0 day(s) remaining");
+        sut.DisplayContents(expiration).Should().Be("Tomate: 0 day(s) remaining");
     }
 
     [Test]
@@ -53,7 +53,7 @@ public class Tests
 
         sut.SADfasdf(expiresTomorrow);
 
-        sut.ASDfasfd(expiration).Should().Be("Patata: 1 day(s) remaining");
+        sut.DisplayContents(expiration).Should().Be("Patata: 1 day(s) remaining");
     }
 
     [Test]
@@ -67,7 +67,21 @@ public class Tests
 
         sut.Open();
 
-        sut.ASDfasfd(expiration).Should().Be("Patata: 0 day(s) remaining");
+        sut.DisplayContents(expiration).Should().Be("Patata: 0 day(s) remaining");
+    }
+
+    [Test]
+    public void Testaddasfdsfdfsdsfdsfdfdfasdfasdfffasdf1()
+    {
+        Fridge sut = Fridge.Empty;
+        DateTime expiration = new DateTime();
+        AddedItem expiresTomorrow =
+            new AddedItem(Name: "Patata", Expiration: expiration.AddDays(1));
+        sut.SADfasdf(expiresTomorrow);
+
+        sut.Open();
+
+        sut.DisplayContents(expiration).Should().Be("EXPIRED: Patata");
     }
 
     [Test]
