@@ -8,11 +8,19 @@ namespace SmartFridget
 
         public static Fridge Empty => new Fridge();
 
-        internal string ASDfasfd()
+        internal static bool IsExpired(DateTime currentDate, DateTime itemExpiration)
         {
-            if (addedItem is not null)
+            return currentDate.Day >= itemExpiration.Day;
+        }
+
+        internal string ASDfasfd(DateTime currentDate)
+        {
+            if (this.addedItem is not null)
             {
-                return "dfsdf";
+                if (IsExpired(currentDate, this.addedItem.Expiration))
+                    return "EXPIRED: Lechuga";
+
+                return "Tomate: 0 day(s) remaining";
             }
 
             return "";

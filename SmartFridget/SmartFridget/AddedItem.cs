@@ -1,15 +1,7 @@
 ﻿
 namespace SmartFridget
 {
-    internal class AddedItem
+    internal record AddedItem(string Name, DateTime Expiration)
     {
-        private string name;
-        private DateTime expiration;
-
-        public AddedItem(string name, DateTime expiration)
-        {
-            this.name = name;
-            this.expiration = expiration;
-        }
     }
 }

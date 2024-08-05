@@ -14,7 +14,7 @@ public class Tests
     [Test]
     public void Test1()
     {
-        Fridge.Empty.ASDfasfd().Should().BeEmpty();
+        Fridge.Empty.ASDfasfd(new DateTime()).Should().BeEmpty();
     }
 
     [Test]
@@ -22,8 +22,45 @@ public class Tests
     {
         Fridge sut = Fridge.Empty;
 
-        sut.SADfasdf(new AddedItem(name: "Lechuga", expiration: new DateTime()));
+        DateTime expiration = new DateTime();
+        sut.SADfasdf(new AddedItem(Name: "Lechuga", Expiration: expiration));
 
-        sut.ASDfasfd().Should().NotBeEmpty();
+        sut.ASDfasfd(expiration).Should().Be("EXPIRED: Lechuga");
+    }
+
+    [Test]
+    public void Testaddasfsdffasdf1()
+    {
+        Fridge sut = Fridge.Empty;
+
+        DateTime expiration = new DateTime();
+        AddedItem expiresTomorrow =
+            new AddedItem(Name: "Tomate", Expiration: expiration.AddDays(1));
+
+        sut.SADfasdf(expiresTomorrow);
+
+        sut.ASDfasfd(expiration).Should().Be("Tomate: 0 day(s) remaining");
+    }
+
+    [Test]
+    public void sdfgsdgf()
+    {
+        Fridge
+            .IsExpired(
+                currentDate: new DateTime(),
+                itemExpiration: new DateTime())
+            .Should().BeTrue();
+
+        Fridge
+            .IsExpired(
+                currentDate: new DateTime(),
+                itemExpiration: new DateTime().AddDays(1))
+            .Should().BeFalse();
+
+        Fridge
+            .IsExpired(
+                currentDate: new DateTime().AddDays(1),
+                itemExpiration: new DateTime())
+            .Should().BeTrue();
     }
 }
