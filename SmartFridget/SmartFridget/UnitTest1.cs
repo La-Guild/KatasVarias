@@ -43,6 +43,20 @@ public class Tests
     }
 
     [Test]
+    public void Testaddasfsdsfdsfdfdffasdf1()
+    {
+        Fridge sut = Fridge.Empty;
+
+        DateTime expiration = new DateTime();
+        AddedItem expiresTomorrow =
+            new AddedItem(Name: "Patata", Expiration: expiration.AddDays(2));
+
+        sut.SADfasdf(expiresTomorrow);
+
+        sut.ASDfasfd(expiration).Should().Be("Patata: 1 day(s) remaining");
+    }
+
+    [Test]
     public void sdfgsdgf()
     {
         Fridge

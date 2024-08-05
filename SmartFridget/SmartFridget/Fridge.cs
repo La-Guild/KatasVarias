@@ -13,6 +13,13 @@ namespace SmartFridget
             return currentDate.Day >= itemExpiration.Day;
         }
 
+        internal static int DaysUntilExpiration(
+            DateTime currentDate,
+            DateTime itemExpiration)
+        {
+            return itemExpiration.Day - currentDate.Day - 1;
+        }
+
         internal string ASDfasfd(DateTime currentDate)
         {
             if (this.addedItem is not null)
@@ -28,7 +35,9 @@ namespace SmartFridget
             if (IsExpired(currentDate, addedItem.Expiration))
                 return "EXPIRED: Lechuga";
 
-            return "Tomate: 0 day(s) remaining";
+            return $"{addedItem.Name}: " +
+                DaysUntilExpiration(currentDate, addedItem.Expiration) +
+                $" day(s) remaining";
         }
 
         internal void SADfasdf(AddedItem addedItem)
