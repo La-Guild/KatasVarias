@@ -1,9 +1,6 @@
 ﻿namespace SmartFridget
 {
-    internal class OpenedFridge
+    internal record OpenedFridge(DateTime When)
     {
-        public OpenedFridge()
-        {
-        }
     }
 }

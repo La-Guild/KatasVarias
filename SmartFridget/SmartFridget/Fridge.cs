@@ -4,12 +4,18 @@
     {
         private AddedItem addedItem;
         private OpenedFridge opened;
+        private DateTime today;
 
         public static Fridge Empty => new Fridge();
 
         internal static bool IsExpired(DateTime currentDate, DateTime itemExpiration)
         {
             return currentDate.Day >= itemExpiration.Day;
+        }
+
+        public void AtDay(DateTime when)
+        {
+            this.today = when;
         }
 
         internal static int DaysUntilExpiration(
@@ -21,9 +27,16 @@
 
         internal string DisplayContents(DateTime currentDate)
         {
+            AtDay(currentDate);
+
+            return DisplayContents2();
+        }
+
+        private string DisplayContents2()
+        {
             if (this.addedItem is not null)
             {
-                return this.RenderItem(currentDate, this.addedItem);
+                return this.RenderItem(today, this.addedItem);
             }
 
             return "";
@@ -42,7 +55,9 @@
         private DateTime ExpirationOf(AddedItem addedItem)
         {
             if (this.opened is not null)
-                return addedItem.Expiration - TimeSpan.FromHours(1);
+                return addedItem.WasInsideFridgeAt(this.opened.When)
+                    ? addedItem.Expiration - TimeSpan.FromHours(1)
+                    : addedItem.Expiration;
 
             return addedItem.Expiration;
         }
@@ -54,7 +69,7 @@
 
         internal void Open()
         {
-            this.opened = new OpenedFridge();
+            this.opened = new OpenedFridge(When: today);
         }
     }
 }
