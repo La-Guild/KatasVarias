@@ -17,13 +17,18 @@ namespace SmartFridget
         {
             if (this.addedItem is not null)
             {
-                if (IsExpired(currentDate, this.addedItem.Expiration))
-                    return "EXPIRED: Lechuga";
-
-                return "Tomate: 0 day(s) remaining";
+                return RenderItem(currentDate, this.addedItem);
             }
 
             return "";
+        }
+
+        private static string RenderItem(DateTime currentDate, AddedItem addedItem)
+        {
+            if (IsExpired(currentDate, addedItem.Expiration))
+                return "EXPIRED: Lechuga";
+
+            return "Tomate: 0 day(s) remaining";
         }
 
         internal void SADfasdf(AddedItem addedItem)
