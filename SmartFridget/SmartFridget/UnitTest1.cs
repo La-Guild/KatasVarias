@@ -16,4 +16,14 @@ public class Tests
     {
         Fridge.Empty.ASDfasfd().Should().BeEmpty();
     }
+
+    [Test]
+    public void Testadfasdf1()
+    {
+        Fridge sut = Fridge.Empty;
+
+        sut.SADfasdf(new AddedItem(name: "Lechuga", expiration: new DateTime()));
+
+        sut.ASDfasfd().Should().NotBeEmpty();
+    }
 }
