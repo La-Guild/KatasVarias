@@ -51,5 +51,11 @@ namespace TellDontAskKata.Main.Domain
         public bool IsShipped() => Status == OrderStatus.Shipped;
         public bool IsRejected() => Status == OrderStatus.Rejected;
         public bool IsApproved() => Status == OrderStatus.Approved;
+
+        public bool IsApprovedAfterRejection(bool approval) =>
+            IsRejected() && approval;
+
+        public bool IsRejectedAfterApproval(bool approval) =>
+            IsApproved() && !approval;
     }
 }

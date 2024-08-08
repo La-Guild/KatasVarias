@@ -20,17 +20,20 @@ namespace TellDontAskKata.Main.UseCase
                 throw new ShippedOrdersCannotBeChangedException();
             }
 
-            if (request.Approved && order.IsRejected())
+            if (order.IsApprovedAfterRejection(request.Approved))
             {
                 throw new RejectedOrderCannotBeApprovedException();
             }
 
-            if (!request.Approved && order.IsApproved())
+            if (order.IsRejectedAfterApproval(request.Approved))
             {
                 throw new ApprovedOrderCannotBeRejectedException();
             }
 
             _orderRepository.Save(order.ApprovalFrom(request.Approved));
         }
+
+
+
     }
 }
