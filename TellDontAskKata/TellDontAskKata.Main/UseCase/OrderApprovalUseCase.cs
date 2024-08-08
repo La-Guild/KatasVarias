@@ -6,6 +6,7 @@ namespace TellDontAskKata.Main.UseCase
     public class OrderApprovalUseCase
     {
         private readonly IOrderRepository _orderRepository;
+
         public OrderApprovalUseCase(IOrderRepository orderRepository)
         {
             _orderRepository = orderRepository;
@@ -30,8 +31,7 @@ namespace TellDontAskKata.Main.UseCase
                 throw new ApprovedOrderCannotBeRejectedException();
             }
 
-            order.Status = request.Approved ? OrderStatus.Approved : OrderStatus.Rejected;
-            _orderRepository.Save(order);
+            _orderRepository.Save(order.ApprovalFrom(request));
         }
     }
 }

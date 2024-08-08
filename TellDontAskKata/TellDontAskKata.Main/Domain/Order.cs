@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using TellDontAskKata.Main.UseCase;
 
 namespace TellDontAskKata.Main.Domain
 {
@@ -32,6 +33,20 @@ namespace TellDontAskKata.Main.Domain
             orderItems.ForEach(i => order.Add(i));
 
             return order;
+        }
+
+        public Order ApprovalFrom(OrderApprovalRequest request)
+        {
+            var newOrder = new Order
+            {
+                Currency = Currency,
+                Id = Id,
+                Status = request.Approved ? OrderStatus.Approved : OrderStatus.Rejected
+            };
+
+            Items.ToList().ForEach(i => newOrder.Add(i));
+
+            return newOrder;
         }
     }
 }
