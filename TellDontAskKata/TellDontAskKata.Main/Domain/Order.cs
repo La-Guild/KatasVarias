@@ -36,6 +36,11 @@ namespace TellDontAskKata.Main.Domain
 
         public Order ApprovalFrom(bool approved)
         {
+            if (IsShipped()
+                    || IsApprovedAfterRejection(approved)
+                    || IsRejectedAfterApproval(approved))
+                throw new ArgumentException();
+
             var newOrder = new Order
             {
                 Currency = Currency,
