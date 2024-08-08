@@ -47,5 +47,9 @@ namespace TellDontAskKata.Main.Domain
 
             return newOrder;
         }
+
+        public bool IsShipped() => Status == OrderStatus.Shipped;
+        public bool IsRejected() => Status == OrderStatus.Rejected;
+        public bool IsApproved() => Status == OrderStatus.Approved;
     }
 }
