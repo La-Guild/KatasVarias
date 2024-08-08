@@ -31,7 +31,7 @@ namespace TellDontAskKata.Main.UseCase
                 throw new ApprovedOrderCannotBeRejectedException();
             }
 
-            _orderRepository.Save(order.ApprovalFrom(request));
+            _orderRepository.Save(order.ApprovalFrom(request.Approved));
         }
     }
 }

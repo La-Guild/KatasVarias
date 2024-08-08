@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TellDontAskKata.Main.UseCase;
 
 namespace TellDontAskKata.Main.Domain
 {
@@ -35,13 +34,13 @@ namespace TellDontAskKata.Main.Domain
             return order;
         }
 
-        public Order ApprovalFrom(OrderApprovalRequest request)
+        public Order ApprovalFrom(bool approved)
         {
             var newOrder = new Order
             {
                 Currency = Currency,
                 Id = Id,
-                Status = request.Approved ? OrderStatus.Approved : OrderStatus.Rejected
+                Status = approved ? OrderStatus.Approved : OrderStatus.Rejected
             };
 
             Items.ToList().ForEach(i => newOrder.Add(i));
