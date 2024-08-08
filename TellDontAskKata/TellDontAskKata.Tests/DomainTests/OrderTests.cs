@@ -7,13 +7,14 @@ namespace TellDontAskKata.Tests.DomainTests
 {
     public class OrderTests
     {
+        // TODO: tu hija de quien eres? Darsus nombres, hommeeee
         [Fact]
         public void MyTestMethod()
         {
             var sut = new Order();
             OrderItem item = new OrderItem();
-            item.TaxedAmount = 10m;
-            item.Tax = 5m;
+            item.TaxedAmount = 10;
+            item.Tax = 5;
 
             sut.Add(item);
 

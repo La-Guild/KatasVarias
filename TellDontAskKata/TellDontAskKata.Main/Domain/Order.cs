@@ -41,6 +41,7 @@ namespace TellDontAskKata.Main.Domain
                     || IsRejectedAfterApproval(approved))
                 throw new ArgumentException();
 
+            // TODO: esta clonación no tiene tests
             var newOrder = new Order
             {
                 Currency = Currency,
