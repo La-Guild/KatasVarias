@@ -55,14 +55,15 @@ public class TicTacToeTests
         Assert.IsTrue(Aasdfgasfg.AreAligned((0, 0), (1, 0), (2, 0)));
         Assert.IsTrue(Aasdfgasfg.AreAligned((0, 0), (2, 0), (1, 0)));
         Assert.IsFalse(Aasdfgasfg.AreAligned((0, 1), (1, 0), (2, 0)));
+        Assert.IsFalse(Aasdfgasfg.AreAligned((0, 1), (0, 1)));
     }
 }
 
 internal class Aasdfgasfg
 {
-    internal static bool AreAligned(params (int, int)[] value)
+    internal static bool AreAligned(params (int x, int y)[] value)
     {
-        return value.Order().SequenceEqual(new []{(0, 0), (1, 0), (2, 0)});
+        return value.Count(coord => coord.y == 0) == 3;
     }
 }
 
