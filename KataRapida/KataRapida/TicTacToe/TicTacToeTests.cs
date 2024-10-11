@@ -1,12 +1,7 @@
 namespace KataRapida;
 
-public class Tests
+public class TicTacToeTests
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
-
     [Test]
     public void Test1()
     {
