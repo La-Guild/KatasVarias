@@ -12,12 +12,29 @@ public class TicTacToeTests
     {
         Assert.AreEqual(new TicTacToe().SymbolAt((0, 0)), "");
     }
+
+    [Test]
+    public void FirstSymbol_IsX()
+    {
+        var sut = new TicTacToe();
+
+        sut.PlaceAt((0, 0));
+        
+        Assert.AreEqual(sut.SymbolAt((0,0)), "X");
+    }
 }
 
 public class TicTacToe
 {
+    bool hasPlaced;
+    
     public string SymbolAt((int, int) cell)
     {
-        return "";
+        return hasPlaced ? "X" : "";
+    }
+
+    public void PlaceAt((int, int) cell)
+    {
+        hasPlaced = true;
     }
 }
