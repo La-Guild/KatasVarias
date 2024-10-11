@@ -21,20 +21,24 @@ public class TicTacToeTests
         sut.PlaceAt((0, 0));
         
         Assert.AreEqual(sut.SymbolAt((0,0)), "X");
+        Assert.AreEqual(sut.SymbolAt((0, 1)), "");
     }
 }
 
 public class TicTacToe
 {
     bool hasPlaced;
+    List<(int, int)> cells = new();
     
     public string SymbolAt((int, int) cell)
     {
+        return cells.Contains(cell) ? "X" : "";
         return hasPlaced ? "X" : "";
     }
 
     public void PlaceAt((int, int) cell)
     {
         hasPlaced = true;
+        cells.Add(cell);
     }
 }
