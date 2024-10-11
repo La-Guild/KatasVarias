@@ -47,17 +47,22 @@ public class TicTacToeTests
         Assert.AreEqual(sut.SymbolAt((1, 2)), "O");
         Assert.AreEqual(sut.SymbolAt((2, 2)), "X");
     }
+    
     [Test]
-    public void NotAllignedSymbols()
+    public void CoordinatesAlignment()
     {
         Assert.IsFalse(Aasdfgasfg.AreAligned((0, 0)));
         Assert.IsTrue(Aasdfgasfg.AreAligned((0, 0), (1, 0), (2, 0)));
+        Assert.IsFalse(Aasdfgasfg.AreAligned((0, 1), (1, 0), (2, 0)));
     }
 }
 
 internal class Aasdfgasfg
 {
-    internal static bool AreAligned(params (int, int)[] value) => value.Length > 1;
+    internal static bool AreAligned(params (int, int)[] value)
+    {
+        return value.SequenceEqual(new []{(0, 0), (1, 0), (2, 0)});
+    }
 }
 
 public class TicTacToe
