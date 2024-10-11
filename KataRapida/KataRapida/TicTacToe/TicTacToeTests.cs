@@ -1,9 +1,9 @@
 namespace KataRapida;
 
-// [] Qué hay en una casilla (Si X o O)
+// [x] Qué hay en una casilla (Si X o O)
 // [] Si una casilla está ocupada
 // [] Si hay 3 del mismo símbolo alineadas game over
-// [] Después de colocar una X, va una O.
+// [x] Después de colocar una X, va una O.
 
 public class TicTacToeTests
 {
@@ -51,18 +51,17 @@ public class TicTacToeTests
 
 public class TicTacToe
 {
-    List<(int, int)> cells = new();
+    List<(int, int)> takenCells = new();
 
     public string SymbolAt((int, int) cell)
     {
-        return cells.Contains(cell) ? SymbolAtNew(cell) : "";
+        return takenCells.Contains(cell) ? SymbolAtNew(cell) : "";
     }
 
-    string SymbolAt() => cells.Count == 1 ? "X" : "O";
-    string SymbolAtNew((int, int) cell) => cells.IndexOf(cell) % 2 == 0 ? "X" : "O";
+    string SymbolAtNew((int, int) cell) => takenCells.IndexOf(cell) % 2 == 0 ? "X" : "O";
 
     public void PlaceAt((int, int) cell)
     {
-        cells.Add(cell);
+        takenCells.Add(cell);
     }
 }
