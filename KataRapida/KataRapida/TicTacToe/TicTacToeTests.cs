@@ -23,6 +23,17 @@ public class TicTacToeTests
         Assert.AreEqual(sut.SymbolAt((0, 0)), "X");
         Assert.AreEqual(sut.SymbolAt((0, 1)), "");
     }
+
+    [Test]
+    public void SecondSymbol_IsO()
+    {
+        var sut = new TicTacToe();
+
+        sut.PlaceAt((0, 0));
+        sut.PlaceAt((0, 1));
+
+        Assert.AreEqual(sut.SymbolAt((0, 1)), "O");
+    }
 }
 
 public class TicTacToe
@@ -31,8 +42,10 @@ public class TicTacToe
 
     public string SymbolAt((int, int) cell)
     {
-        return cells.Contains(cell) ? "X" : "";
+        return cells.Contains(cell) ? SymbolAt() : "";
     }
+
+    private string SymbolAt() => cells.Count() == 1 ? "X" : "O";
 
     public void PlaceAt((int, int) cell)
     {
