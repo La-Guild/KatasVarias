@@ -39,14 +39,25 @@ public class TicTacToeTests
     public void AlternateSymbolTurn()
     {
         var sut = new TicTacToe();
-        
-        sut.PlaceAt((0,2));
-        sut.PlaceAt((1,2));
-        sut.PlaceAt((2,2));
-        
-        Assert.AreEqual(sut.SymbolAt((1,2)), "O");
-        Assert.AreEqual(sut.SymbolAt((2,2)), "X");
+
+        sut.PlaceAt((0, 2));
+        sut.PlaceAt((1, 2));
+        sut.PlaceAt((2, 2));
+
+        Assert.AreEqual(sut.SymbolAt((1, 2)), "O");
+        Assert.AreEqual(sut.SymbolAt((2, 2)), "X");
     }
+    [Test]
+    public void NotAllignedSymbols()
+    {
+        Assert.IsFalse(Aasdfgasfg.AreAligned((0, 0)));
+        Assert.IsTrue(Aasdfgasfg.AreAligned((0, 0), (1, 0), (2, 0)));
+    }
+}
+
+internal class Aasdfgasfg
+{
+    internal static bool AreAligned(params (int, int)[] value) => value.Length > 1;
 }
 
 public class TicTacToe
