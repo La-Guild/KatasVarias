@@ -3,7 +3,7 @@
 public class TicTacToe
 {
     List<(int, int)> takenCells = new();
-    public string Winner { get; set; } = "";
+    public string Winner => XSymbols.Count() == 3 ? "X" : "";
     public IEnumerable<(int, int)> XSymbols => takenCells.Where(IsX);
 
     public string SymbolAt((int, int) cell)
