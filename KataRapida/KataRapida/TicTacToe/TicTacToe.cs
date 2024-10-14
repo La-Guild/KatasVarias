@@ -4,14 +4,19 @@ public class TicTacToe
 {
     List<(int, int)> takenCells = new();
     public string Winner { get; set; } = "";
-    public IEnumerable<(int, int)> XSymbols => Enumerable.Empty<(int, int)>();
+    public IEnumerable<(int, int)> XSymbols => takenCells.Where(IsX);
 
     public string SymbolAt((int, int) cell)
     {
         return takenCells.Contains(cell) ? SymbolAtNew(cell) : "";
     }
 
-    string SymbolAtNew((int, int) cell) => takenCells.IndexOf(cell) % 2 == 0 ? "X" : "O";
+    string SymbolAtNew((int, int) cell) => IsX(cell) ? "X" : "O";
+
+    bool IsX((int, int) cell)
+    {
+        return takenCells.IndexOf(cell) % 2 == 0;
+    }
 
     public void PlaceAt((int, int) cell)
     {

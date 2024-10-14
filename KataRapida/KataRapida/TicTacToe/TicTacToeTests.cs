@@ -50,7 +50,7 @@ public class TicTacToeTests
         Assert.AreEqual(sut.SymbolAt((1, 2)), "O");
         Assert.AreEqual(sut.SymbolAt((2, 2)), "X");
     }
-    
+
     [Test]
     public void StartWithoutWinner()
     {
@@ -61,6 +61,14 @@ public class TicTacToeTests
     public void StartWithoutX()
     {
         Assert.IsEmpty(new TicTacToe().XSymbols);
+    }
+
+    [Test]
+    public void HaveOneX_AfterPlacing()
+    {
+        var sut = new TicTacToe();
+        sut.PlaceAt((0, 0));
+        Assert.IsNotEmpty(sut.XSymbols);
     }
 
     [Test]
@@ -85,7 +93,7 @@ public class TicTacToeTests
     public void CoordinatesAreInDiagonal()
     {
         Assert.IsFalse(AreInDiagonal((0, 0)));
-        Assert.IsTrue(AreInDiagonal((0, 0), (1, 1), (2,2)));
+        Assert.IsTrue(AreInDiagonal((0, 0), (1, 1), (2, 2)));
         Assert.IsTrue(AreInDiagonal((0, 2), (1, 1), (2, 0)));
     }
 }
