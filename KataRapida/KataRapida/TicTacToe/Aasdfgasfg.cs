@@ -22,4 +22,10 @@ internal class Aasdfgasfg
 
         return coords.Any(aCoord => coords.Count(coord => coord.x == aCoord.x) == 3);
     }
+
+    internal static bool AreInDiagonal(params (int x, int y)[] coords)
+    {
+        return coords.Contains((0, 0)) && coords.Contains((1, 1)) && coords.Contains((2, 2))
+            || coords.Contains((0, 2)) && coords.Contains((1, 1)) && coords.Contains((2, 0));
+    }
 }
