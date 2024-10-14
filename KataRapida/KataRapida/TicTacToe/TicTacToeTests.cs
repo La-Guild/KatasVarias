@@ -58,6 +58,12 @@ public class TicTacToeTests
     }
 
     [Test]
+    public void StartWithoutX()
+    {
+        Assert.IsEmpty(new TicTacToe().XSymbols);
+    }
+
+    [Test]
     public void CoordinatesAreInTheSameRow()
     {
         Assert.IsFalse(AreInRow((0, 0)));

@@ -4,6 +4,7 @@ public class TicTacToe
 {
     List<(int, int)> takenCells = new();
     public string Winner { get; set; } = "";
+    public IEnumerable<(int, int)> XSymbols => Enumerable.Empty<(int, int)>();
 
     public string SymbolAt((int, int) cell)
     {
