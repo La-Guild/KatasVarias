@@ -5,6 +5,7 @@ namespace KataRapida;
 // [x] Qué hay en una casilla (Si X o O)
 // [] Si una casilla está ocupada
 // [] Si hay 3 del mismo símbolo alineadas game over
+// [] Conocer ganador
 // [x] Después de colocar una X, va una O.
 
 public class TicTacToeTests

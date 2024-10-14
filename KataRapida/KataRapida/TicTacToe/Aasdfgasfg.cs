@@ -25,6 +25,9 @@ internal class Aasdfgasfg
 
     internal static bool AreInDiagonal(params (int x, int y)[] coords)
     {
+        if (coords.Distinct().Count() != coords.Count())
+            throw new ArgumentException();
+
         return coords.Contains((0, 0)) && coords.Contains((1, 1)) && coords.Contains((2, 2))
             || coords.Contains((0, 2)) && coords.Contains((1, 1)) && coords.Contains((2, 0));
     }
