@@ -72,13 +72,7 @@ internal class Aasdfgasfg
 {
     internal static bool AreInRow(params (int x, int y)[] coords)
     {
-        foreach (var aCoord in coords)
-        {
-            if (coords.Count(coord => coord.y == aCoord.y) == 3)
-                return true;
-        }
-
-        return false;
+        return coords.Any(aCoord => coords.Count(coord => coord.y == aCoord.y) == 3);
     }
 }
 
