@@ -91,6 +91,20 @@ public class TicTacToeTests
     }
 
     [Test]
+    public void XHasntWonYet()
+    {
+        var sut = new TicTacToe();
+
+        sut.PlaceAt((0, 0));
+        sut.PlaceAt((1, 0));
+        sut.PlaceAt((0, 1));
+        sut.PlaceAt((2, 2));
+        sut.PlaceAt((2, 0));
+
+        Assert.AreEqual("", sut.Winner);
+    }
+
+    [Test]
     public void CoordinatesAreInTheSameRow()
     {
         Assert.IsFalse(AreInRow((0, 0)));
