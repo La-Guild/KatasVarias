@@ -51,7 +51,7 @@ public class TicTacToeTests
     }
 
     [Test]
-    public void CoordinatesAlignment()
+    public void CoordinatesAreInTheSameRow()
     {
         Assert.IsFalse(AreInRow((0, 0)));
         Assert.IsTrue(AreInRow((0, 0), (1, 0), (2, 0)));
@@ -59,7 +59,11 @@ public class TicTacToeTests
         Assert.IsFalse(AreInRow((0, 1), (1, 0), (2, 0)));
 
         Assert.IsTrue(AreInRow((0, 1), (2, 1), (1, 1)));
+    }
 
+    [Test]
+    public void CoordinatesAreInTheSameColumn()
+    {
         Assert.IsFalse(AreInColumn((0, 0)));
         Assert.IsTrue(AreInColumn((0, 0), (0, 1), (0, 2)));
     }
