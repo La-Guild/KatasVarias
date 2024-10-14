@@ -62,33 +62,3 @@ public class TicTacToeTests
         Assert.IsTrue(AreInRow((0, 1), (2, 1), (1, 1)));
     }
 }
-
-// [] Filas
-// [] Columnas
-// [] Diagonales
-// [] Assert en AreInRow (No duplicados)
-
-internal class Aasdfgasfg
-{
-    internal static bool AreInRow(params (int x, int y)[] coords)
-    {
-        return coords.Any(aCoord => coords.Count(coord => coord.y == aCoord.y) == 3);
-    }
-}
-
-public class TicTacToe
-{
-    List<(int, int)> takenCells = new();
-
-    public string SymbolAt((int, int) cell)
-    {
-        return takenCells.Contains(cell) ? SymbolAtNew(cell) : "";
-    }
-
-    string SymbolAtNew((int, int) cell) => takenCells.IndexOf(cell) % 2 == 0 ? "X" : "O";
-
-    public void PlaceAt((int, int) cell)
-    {
-        takenCells.Add(cell);
-    }
-}
