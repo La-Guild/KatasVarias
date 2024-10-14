@@ -6,6 +6,7 @@ public class TicTacToe
 {
     List<(int, int)> takenCells = new();
     public string Winner => HasWon(XSymbols) ? "X" : HasWon(OSymbols) ? "O" : "";
+    public bool IsFull => takenCells.Count == 9;
     public IEnumerable<(int, int)> XSymbols => takenCells.Where(IsX);
     public IEnumerable<(int, int)> OSymbols => takenCells.Except(XSymbols);
 

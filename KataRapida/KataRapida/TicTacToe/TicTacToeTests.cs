@@ -5,7 +5,7 @@ namespace KataRapida;
 // [x] Qué hay en una casilla (Si X o O)
 // [] Si una casilla está ocupada
 // [] Si hay 3 del mismo símbolo alineadas game over
-// [] Conocer ganador
+// [x] Conocer ganador
 // [x] Después de colocar una X, va una O.
 
 public class TicTacToeTests
@@ -73,8 +73,8 @@ public class TicTacToeTests
         sut.PlaceAt((1, 0));
 
         Assert.IsNotEmpty(sut.XSymbols);
-        Assert.IsTrue(sut.XSymbols.Contains((1,0)));
-        Assert.IsTrue(sut.OSymbols.Contains((0,1)));
+        Assert.IsTrue(sut.XSymbols.Contains((1, 0)));
+        Assert.IsTrue(sut.OSymbols.Contains((0, 1)));
     }
 
     [Test]
@@ -90,7 +90,23 @@ public class TicTacToeTests
 
         Assert.AreEqual("X", sut.Winner);
     }
-    
+
+    [Test]
+    public void IsGameOver_With9Symbols()
+    {
+        var sut = new TicTacToe();
+
+        for (var x = 0; x < 3; x++)
+        {
+            for (var y = 0; y < 3; y++)
+            {
+                sut.PlaceAt((x, y));
+            }
+        }
+        
+        Assert.IsTrue(sut.IsFull);
+    }
+
     [Test]
     public void OWins()
     {
