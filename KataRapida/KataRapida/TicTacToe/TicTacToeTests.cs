@@ -67,8 +67,13 @@ public class TicTacToeTests
     public void HaveOneX_AfterPlacing()
     {
         var sut = new TicTacToe();
+
         sut.PlaceAt((0, 0));
+        sut.PlaceAt((0, 1));
+        sut.PlaceAt((1, 0));
+
         Assert.IsNotEmpty(sut.XSymbols);
+        Assert.IsTrue(sut.XSymbols.Contains((1,0)));
     }
 
     [Test]
