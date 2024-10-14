@@ -1,18 +1,19 @@
 ﻿namespace KataRapida;
-using static KataRapida.Aasdfgasfg;
+
+using static Aasdfgasfg;
 
 public class TicTacToe
 {
     List<(int, int)> takenCells = new();
-    public string Winner => HasWon(XSymbols) ? "X" : "";
+    public string Winner => HasWon(XSymbols) ? "X" : HasWon(OSymbols) ? "O" : "";
     public IEnumerable<(int, int)> XSymbols => takenCells.Where(IsX);
     public IEnumerable<(int, int)> OSymbols => takenCells.Except(XSymbols);
 
     bool HasWon(IEnumerable<(int, int)> symbols)
     {
-        return AreInRow(symbols.ToArray()) 
-            || AreInColumn(symbols.ToArray()) 
-            || AreInDiagonal(symbols.ToArray());
+        return AreInRow(symbols.ToArray())
+               || AreInColumn(symbols.ToArray())
+               || AreInDiagonal(symbols.ToArray());
     }
 
     public string SymbolAt((int, int) cell)

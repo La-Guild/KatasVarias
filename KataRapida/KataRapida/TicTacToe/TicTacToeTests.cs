@@ -90,6 +90,21 @@ public class TicTacToeTests
 
         Assert.AreEqual("X", sut.Winner);
     }
+    
+    [Test]
+    public void OWins()
+    {
+        var sut = new TicTacToe();
+
+        sut.PlaceAt((0, 1));
+        sut.PlaceAt((0, 0));
+        sut.PlaceAt((2, 2));
+        sut.PlaceAt((1, 0));
+        sut.PlaceAt((1, 2));
+        sut.PlaceAt((2, 0));
+
+        Assert.AreEqual("O", sut.Winner);
+    }
 
     [Test]
     public void XHasntWonYet()
