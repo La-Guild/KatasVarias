@@ -9,11 +9,17 @@ internal class Aasdfgasfg
 {
     internal static bool AreInRow(params (int x, int y)[] coords)
     {
+        if (coords.Distinct().Count() != coords.Count())
+            throw new ArgumentException();
+
         return coords.Any(aCoord => coords.Count(coord => coord.y == aCoord.y) == 3);
     }
 
     internal static bool AreInColumn(params (int x, int y)[] coords)
     {
+        if (coords.Distinct().Count() != coords.Count())
+            throw new ArgumentException();
+
         return coords.Any(aCoord => coords.Count(coord => coord.x == aCoord.x) == 3);
     }
 }
