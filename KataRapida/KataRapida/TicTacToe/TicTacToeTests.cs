@@ -1,3 +1,5 @@
+using static KataRapida.Aasdfgasfg;
+
 namespace KataRapida;
 
 // [x] Qué hay en una casilla (Si X o O)
@@ -47,25 +49,36 @@ public class TicTacToeTests
         Assert.AreEqual(sut.SymbolAt((1, 2)), "O");
         Assert.AreEqual(sut.SymbolAt((2, 2)), "X");
     }
-    
+
     [Test]
     public void CoordinatesAlignment()
     {
-        Assert.IsFalse(Aasdfgasfg.AreAligned((0, 0)));
-        Assert.IsTrue(Aasdfgasfg.AreAligned((0, 0), (1, 0), (2, 0)));
-        Assert.IsTrue(Aasdfgasfg.AreAligned((0, 0), (2, 0), (1, 0)));
-        Assert.IsFalse(Aasdfgasfg.AreAligned((0, 1), (1, 0), (2, 0)));
-        Assert.IsFalse(Aasdfgasfg.AreAligned((0, 1), (0, 1)));
-        
-        Assert.IsTrue(Aasdfgasfg.AreAligned((0, 1), (2, 1), (1, 1)));
+        Assert.IsFalse(AreInRow((0, 0)));
+        Assert.IsTrue(AreInRow((0, 0), (1, 0), (2, 0)));
+        Assert.IsTrue(AreInRow((0, 0), (2, 0), (1, 0)));
+        Assert.IsFalse(AreInRow((0, 1), (1, 0), (2, 0)));
+        Assert.IsFalse(AreInRow((0, 1), (0, 1)));
+
+        Assert.IsTrue(AreInRow((0, 1), (2, 1), (1, 1)));
     }
 }
 
+// [] Filas
+// [] Columnas
+// [] Diagonales
+// [] Assert en AreInRow (No duplicados)
+
 internal class Aasdfgasfg
 {
-    internal static bool AreAligned(params (int x, int y)[] value)
+    internal static bool AreInRow(params (int x, int y)[] coords)
     {
-        return value.Count(coord => coord.y == 0) == 3;
+        foreach (var aCoord in coords)
+        {
+            if (coords.Count(coord => coord.y == aCoord.y) == 3)
+                return true;
+        }
+
+        return false;
     }
 }
 
