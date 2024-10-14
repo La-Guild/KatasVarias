@@ -9,6 +9,7 @@ public class TicTacToe
     public bool IsFull => takenCells.Count == 9;
     public IEnumerable<(int, int)> XSymbols => takenCells.Where(IsX);
     public IEnumerable<(int, int)> OSymbols => takenCells.Except(XSymbols);
+    public bool IsGameOver => false;
 
     bool HasWon(IEnumerable<(int, int)> symbols)
     {

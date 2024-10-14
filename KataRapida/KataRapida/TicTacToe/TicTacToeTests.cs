@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using static KataRapida.Aasdfgasfg;
 
 namespace KataRapida;
@@ -89,6 +90,12 @@ public class TicTacToeTests
         sut.PlaceAt((2, 0));
 
         Assert.AreEqual("X", sut.Winner);
+    }
+
+    [Test]
+    public void GameIsNotOver_AtStart()
+    {
+        Assert.IsFalse(new TicTacToe().IsGameOver);
     }
 
     [Test]
