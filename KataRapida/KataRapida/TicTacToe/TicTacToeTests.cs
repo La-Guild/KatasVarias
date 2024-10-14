@@ -90,6 +90,7 @@ public class TicTacToeTests
         sut.PlaceAt((2, 0));
 
         Assert.AreEqual("X", sut.Winner);
+        Assert.IsTrue(sut.IsGameOver);
     }
 
     [Test]
@@ -97,7 +98,7 @@ public class TicTacToeTests
     {
         Assert.IsFalse(new TicTacToe().IsGameOver);
     }
-
+    
     [Test]
     public void IsGameOver_With9Symbols()
     {
@@ -127,6 +128,7 @@ public class TicTacToeTests
         sut.PlaceAt((2, 0));
 
         Assert.AreEqual("O", sut.Winner);
+        Assert.IsTrue(sut.IsGameOver);
     }
 
     [Test]
