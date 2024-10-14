@@ -3,6 +3,7 @@
 public class TicTacToe
 {
     List<(int, int)> takenCells = new();
+    public string Winner { get; set; } = "";
 
     public string SymbolAt((int, int) cell)
     {

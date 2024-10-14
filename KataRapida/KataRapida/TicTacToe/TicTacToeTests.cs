@@ -50,6 +50,12 @@ public class TicTacToeTests
         Assert.AreEqual(sut.SymbolAt((1, 2)), "O");
         Assert.AreEqual(sut.SymbolAt((2, 2)), "X");
     }
+    
+    [Test]
+    public void StartWithoutWinner()
+    {
+        Assert.AreEqual("", new TicTacToe().Winner);
+    }
 
     [Test]
     public void CoordinatesAreInTheSameRow()
