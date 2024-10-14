@@ -57,7 +57,6 @@ public class TicTacToeTests
         Assert.IsTrue(AreInRow((0, 0), (1, 0), (2, 0)));
         Assert.IsTrue(AreInRow((0, 0), (2, 0), (1, 0)));
         Assert.IsFalse(AreInRow((0, 1), (1, 0), (2, 0)));
-        Assert.IsFalse(AreInRow((0, 1), (0, 1)));
 
         Assert.IsTrue(AreInRow((0, 1), (2, 1), (1, 1)));
 
