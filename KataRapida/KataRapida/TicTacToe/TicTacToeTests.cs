@@ -74,6 +74,7 @@ public class TicTacToeTests
 
         Assert.IsNotEmpty(sut.XSymbols);
         Assert.IsTrue(sut.XSymbols.Contains((1,0)));
+        Assert.IsTrue(sut.OSymbols.Contains((0,1)));
     }
 
     [Test]
