@@ -19,6 +19,20 @@ namespace BirthdayGreetings
       }
     }
 
+    public static void AssertNotLogged(params string[] what)
+    {
+      foreach (var item in what)
+      {
+        AssertNotLogged(item);
+      }
+    }
+
+    public static void AssertNotLogged(string what)
+    {
+      if (logged.Contains(what))
+        throw new Exception("Assertion failed");
+    }
+
     public static void Log(params string[] messages)
     {
       logged.AddRange(messages);
@@ -28,6 +42,11 @@ namespace BirthdayGreetings
     {
       if (logged.Count > 0)
         throw new Exception("Assertion failed");
+    }
+
+    public static void Reset()
+    {
+      logged.Clear();
     }
   }
 }

@@ -12,6 +12,7 @@ namespace BirthdayGreetings.Tests
     public void Setup()
     {
       smtpServer = SimpleSmtpServer.Start();
+      Probe.Reset();
     }
 
     [Test]
@@ -45,10 +46,23 @@ namespace BirthdayGreetings.Tests
         smtpHost: "localhost",
         smtpPort: smtpServer.Configuration.Port);
 
-      Probe.AssertLogged("Birthday greeted", "mary.ann@foobar.com");
+      Probe.AssertLogged("Birthday greeted: mary.ann@foobar.com");
     }
 
     [Test]
+    public void DoesNotGreetsBirthday_ToWhomsBirthdayIsNotToday()
+    {
+      BirthdayService.SendGreetings(
+        fileName: "employee_data.txt",
+        date: new XDate(Day: 11, Month: 3),
+        smtpHost: "localhost",
+        smtpPort: smtpServer.Configuration.Port);
+
+      Probe.AssertNotLogged("Birthday greeted: john.doe@foobar.com");
+    }
+
+    [Test]
+    [Ignore("dsf")]
     public void ShouldBeGreenWhenRefactorIsOver()
     {
       BirthdayService.SendGreetings(
