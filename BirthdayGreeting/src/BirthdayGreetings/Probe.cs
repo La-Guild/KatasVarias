@@ -11,22 +11,6 @@ namespace BirthdayGreetings
         throw new Exception("Assertion failed");
     }
 
-    public static void AssertLogged(params string[] what)
-    {
-      foreach (var item in what)
-      {
-        AssertLogged(item);
-      }
-    }
-
-    public static void AssertNotLogged(params string[] what)
-    {
-      foreach (var item in what)
-      {
-        AssertNotLogged(item);
-      }
-    }
-
     public static void AssertNotLogged(string what)
     {
       if (logged.Contains(what))
