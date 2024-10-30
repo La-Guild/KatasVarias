@@ -11,6 +11,14 @@ namespace BirthdayGreetings
         throw new Exception("Assertion failed");
     }
 
+    public static void AssertLogged(params string[] what)
+    {
+      foreach (var item in what)
+      {
+        AssertLogged(item);
+      }
+    }
+
     public static void Log(params string[] messages)
     {
       logged.AddRange(messages);

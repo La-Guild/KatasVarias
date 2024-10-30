@@ -30,7 +30,7 @@ public class BirthdayService
           body: $"Happy Birthday, dear {employee.FirstName}",
           recipient: employee.Email);
 
-        Probe.Log("Birthday greeted");
+        Probe.Log("Birthday greeted", employee.Email);
       }
     }
   }

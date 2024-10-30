@@ -45,7 +45,7 @@ namespace BirthdayGreetings.Tests
         smtpHost: "localhost",
         smtpPort: smtpServer.Configuration.Port);
 
-      Probe.AssertLogged("Birthday greeted");
+      Probe.AssertLogged("Birthday greeted", "mary.ann@foobar.com");
     }
   }
 }
