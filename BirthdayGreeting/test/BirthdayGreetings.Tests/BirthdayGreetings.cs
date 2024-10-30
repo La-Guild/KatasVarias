@@ -47,5 +47,17 @@ namespace BirthdayGreetings.Tests
 
       Probe.AssertLogged("Birthday greeted", "mary.ann@foobar.com");
     }
+
+    [Test]
+    public void ShouldBeGreenWhenRefactorIsOver()
+    {
+      BirthdayService.SendGreetings(
+        fileName: "employee_data.txt",
+        date: new XDate(Day: 11, Month: 3),
+        smtpHost: "localhost",
+        smtpPort: smtpServer.Configuration.Port);
+
+      Probe.NothingWasLogged();
+    }
   }
 }

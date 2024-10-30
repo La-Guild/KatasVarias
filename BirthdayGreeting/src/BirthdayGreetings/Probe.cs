@@ -23,5 +23,11 @@ namespace BirthdayGreetings
     {
       logged.AddRange(messages);
     }
+
+    public static void NothingWasLogged()
+    {
+      if (logged.Count > 0)
+        throw new Exception("Assertion failed");
+    }
   }
 }
