@@ -6,6 +6,8 @@ public class BirthdayService
 {
   public static void SendGreetings(string fileName, XDate date, string smtpHost, int smtpPort)
   {
+    Probe.Log("Starting");
+
     StreamReader input = new(fileName);
     var str = "";
     str = input.ReadLine(); // skip header

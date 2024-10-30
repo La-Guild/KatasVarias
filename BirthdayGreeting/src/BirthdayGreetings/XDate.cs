@@ -1,4 +1,4 @@
-﻿namespace BirthdayGreetings;
+namespace BirthdayGreetings;
 
 public record XDate(int Day, int Month)
 {
