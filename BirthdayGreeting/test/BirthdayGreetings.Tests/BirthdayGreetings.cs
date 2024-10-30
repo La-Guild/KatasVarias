@@ -18,21 +18,13 @@ namespace BirthdayGreetings.Tests
     [Test]
     public void DoesNotThrowsOnInit()
     {
-      BirthdayService.SendGreetings(
-        fileName: "employee_data.txt",
-        date: new XDate(1, 1),
-        smtpHost: "localhost",
-        smtpPort: 1);
+      GreetOn(day: 1, month: 1);
     }
 
     [Test]
     public void ShouldStart()
     {
-      BirthdayService.SendGreetings(
-        fileName: "employee_data.txt",
-        date: new XDate(1, 1),
-        smtpHost: "localhost",
-        smtpPort: 1);
+      GreetOn(day: 1, month: 1);
 
       Probe.AssertLogged("Starting");
     }
@@ -40,11 +32,7 @@ namespace BirthdayGreetings.Tests
     [Test]
     public void GreetsBirthday()
     {
-      BirthdayService.SendGreetings(
-        fileName: "employee_data.txt",
-        date: new XDate(Day: 11, Month: 3),
-        smtpHost: "localhost",
-        smtpPort: smtpServer.Configuration.Port);
+      GreetOn(day: 11, month: 3);
 
       Probe.AssertLogged("Birthday greeted: mary.ann@foobar.com");
     }
@@ -52,11 +40,7 @@ namespace BirthdayGreetings.Tests
     [Test]
     public void DoesNotGreetsBirthday_ToWhomsBirthdayIsNotToday()
     {
-      BirthdayService.SendGreetings(
-        fileName: "employee_data.txt",
-        date: new XDate(Day: 11, Month: 3),
-        smtpHost: "localhost",
-        smtpPort: smtpServer.Configuration.Port);
+      GreetOn(day: 11, month: 3);
 
       Probe.AssertNotLogged("Birthday greeted: john.doe@foobar.com");
     }
@@ -65,13 +49,18 @@ namespace BirthdayGreetings.Tests
     [Ignore("dsf")]
     public void ShouldBeGreenWhenRefactorIsOver()
     {
-      BirthdayService.SendGreetings(
-        fileName: "employee_data.txt",
-        date: new XDate(Day: 11, Month: 3),
-        smtpHost: "localhost",
-        smtpPort: smtpServer.Configuration.Port);
+      GreetOn(day: 11, month: 3);
 
       Probe.NothingWasLogged();
+    }
+
+    private void GreetOn(int day, int month)
+    {
+      BirthdayService.SendGreetings(
+          fileName: "employee_data.txt",
+          date: new XDate(Day: day, Month: month),
+          smtpHost: "localhost",
+          smtpPort: smtpServer.Configuration.Port);
     }
   }
 }
