@@ -1,5 +1,6 @@
 using netDumbster.smtp;
 using NUnit.Framework;
+using System.Net.Mail;
 
 namespace BirthdayGreetings.Tests
 {
@@ -43,6 +44,14 @@ namespace BirthdayGreetings.Tests
       GreetOn(day: 11, month: 3);
 
       Probe.AssertNotLogged("Birthday greeted: john.doe@foobar.com");
+    }
+
+    [Test]
+    public void FailsToSendToServer()
+    {
+      smtpServer.Stop();
+
+      Assert.Throws<SmtpException>(() => GreetOn(day: 11, month: 3));
     }
 
     [Test]
