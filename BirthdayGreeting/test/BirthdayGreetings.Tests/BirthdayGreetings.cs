@@ -1,9 +1,19 @@
+using netDumbster.smtp;
 using NUnit.Framework;
 
 namespace BirthdayGreetings.Tests
 {
   public class BirthdayGreetings
   {
+
+    private SimpleSmtpServer? smtpServer;
+
+    [SetUp]
+    public void Setup()
+    {
+      smtpServer = SimpleSmtpServer.Start();
+    }
+
     [Test]
     public void DoesNotThrowsOnInit()
     {
@@ -24,6 +34,18 @@ namespace BirthdayGreetings.Tests
         smtpPort: 1);
 
       Probe.AssertLogged("Starting");
+    }
+
+    [Test]
+    public void GreetsBirthday()
+    {
+      BirthdayService.SendGreetings(
+        fileName: "employee_data.txt",
+        date: new XDate(Day: 11, Month: 3),
+        smtpHost: "localhost",
+        smtpPort: smtpServer.Configuration.Port);
+
+      Probe.AssertLogged("Birthday greeted");
     }
   }
 }

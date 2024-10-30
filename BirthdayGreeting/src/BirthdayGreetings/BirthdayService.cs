@@ -4,7 +4,11 @@ namespace BirthdayGreetings;
 
 public class BirthdayService
 {
-  public static void SendGreetings(string fileName, XDate date, string smtpHost, int smtpPort)
+  public static void SendGreetings(
+    string fileName,
+    XDate date,
+    string smtpHost,
+    int smtpPort)
   {
     Probe.Log("Starting");
 
@@ -25,6 +29,8 @@ public class BirthdayService
           subject: "Happy Birthday!",
           body: $"Happy Birthday, dear {employee.FirstName}",
           recipient: employee.Email);
+
+        Probe.Log("Birthday greeted");
       }
     }
   }
